@@ -1,5 +1,5 @@
 import {
-    collection, getDocs, getDoc, doc, limit, query, where,
+    collection, getDocs, getDoc, doc, limit, query,
 } from 'firebase/firestore/lite'
 import { db } from '..'
 import * as shelter from './shelter'
@@ -54,7 +54,5 @@ export const get = async (id: string): Promise<Pet | null> => {
         }
         return pet
     }
-    // doc.data() will be undefined in this case
-    console.log('No such document!')
     return null
 }

@@ -15,7 +15,6 @@ import * as pet from '../db/repositories/pet'
 import getPetTitle from '../utils/getPetTitle'
 import calculateAge from '../utils/calculateAge'
 import * as ROUTES from '../constants/routes'
-import dictionary from '../constants/dictionary'
 import findLabel from '../utils/findLabel'
 
 const useStyles = makeStyles({

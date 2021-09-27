@@ -27,10 +27,7 @@ export const get = async (id: string): Promise<Shelter | null> => {
 
     if (docSnap.exists()) {
         const data = { ...docSnap.data(), id: docSnap.id }
-        console.log('Document data:', data)
         return data as Shelter
     }
-    // doc.data() will be undefined in this case
-    console.log('No such document!')
     return null
 }

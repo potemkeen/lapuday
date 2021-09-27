@@ -16,7 +16,7 @@ import PetCard from '../components/PetCard'
 import dictionary from '../constants/dictionary'
 
 const Pets: React.FC = () => {
-    const [filter, setFilter] = useState<Record<string, (value: any) => boolean>>({})
+    const [filter, setFilter] = useState<Record<string, (value: never) => boolean>>({})
     const [filterValues, setFilterValues] = useState({
         name: '',
         type: '',
