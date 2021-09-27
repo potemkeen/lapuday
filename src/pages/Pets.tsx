@@ -151,6 +151,7 @@ const Pets: React.FC = () => {
                         </Box>
                         <Box mt={2}>
                             <FormControl fullWidth>
+                                <InputLabel id="hair-select-label">Шерсть</InputLabel>
                                 <Select
                                     labelId="hair-select-label"
                                     id="hair-select"
