@@ -10,7 +10,7 @@ const About: React.FC = () => (
         <Container>
             <Box mt={4}>
                 <Typography variant="body1">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Эта страница пока не готова
                 </Typography>
             </Box>
         </Container>

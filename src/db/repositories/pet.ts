@@ -30,7 +30,7 @@ export type Pet = {
     description: string;
     photos: string[];
     name: string;
-    shelter?: shelter.Shelter;
+    shelter?: shelter.Shelter | null;
 }
 
 export const all = async (limitNumber = 100): Promise<Array<Pet>> => {
@@ -48,8 +48,8 @@ export const get = async (id: string): Promise<Pet | null> => {
 
     if (docSnap.exists()) {
         const pet = { ...docSnap.data(), id: docSnap.id } as Pet
-        const shelterRes = await shelter.get(pet.shelterId)
-        if (shelterRes) {
+        if (pet.shelterId) {
+            const shelterRes = await shelter.get(pet.shelterId)
             return { shelter: shelterRes, ...pet }
         }
         return pet

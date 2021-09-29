@@ -35,10 +35,12 @@ const PetCard: React.FC<{ pet: Pet}> = ({ pet }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
+                <IconButton
+                    aria-label="add to favorites"
+                    onClick={() => setFavorite((prev) => !prev)}
+                >
                     <FavoriteIcon
                         color={favorite ? 'error' : 'disabled'}
-                        onClick={() => setFavorite((prev) => !prev)}
                     />
                 </IconButton>
                 <IconButton aria-label="share">

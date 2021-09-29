@@ -1,5 +1,5 @@
 import {
-    getDoc, doc,
+    getDoc, doc, collection, query, getDocs,
 } from 'firebase/firestore/lite'
 import { db } from '..'
 
@@ -19,6 +19,15 @@ export type Shelter = {
     };
     logo: string;
     id: string;
+}
+
+export const all = async (): Promise<Array<Shelter>> => {
+    const col = collection(db, COLLECTION_NAME)
+    const q = query(col)
+    const snapshot = await getDocs(q)
+    const data = snapshot.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }))
+
+    return data as Array<Shelter>
 }
 
 export const get = async (id: string): Promise<Shelter | null> => {

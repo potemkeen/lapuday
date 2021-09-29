@@ -8,6 +8,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Home from './pages/Home'
 import Pets from './pages/Pets'
 import PetProfile from './pages/PetProfile'
+import Shelters from './pages/Shelters'
 import * as ROUTES from './constants/routes'
 import './App.css'
 import About from './pages/About'
@@ -34,6 +35,9 @@ const App: React.FC = () => (
                     </Route>
                     <Route path={ROUTES.PETS}>
                         <Pets />
+                    </Route>
+                    <Route path={ROUTES.SHELTERS}>
+                        <Shelters />
                     </Route>
                     <Route path={ROUTES.ABOUT}>
                         <About />

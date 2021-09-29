@@ -22,6 +22,8 @@ export default {
         { value: 'trained_leash', label: 'Приучен к поводку' },
         { value: 'trained_tray', label: 'Приучен к лотку' },
         { value: 'trained_scratchingstone', label: 'Приучен к когтеточке' },
+        { value: 'cat_walk', label: 'Нравится бегать' },
+        { value: 'long_walk', label: 'Нравится бегать' },
     ],
     type: [
         { value: 'cat', label: 'Кошка' },

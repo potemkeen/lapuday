@@ -75,6 +75,13 @@ const Header: React.FC = () => {
                                 Найти питомца
                             </NavLink>
                             <NavLink
+                                to={ROUTES.SHELTERS}
+                                className={classes.menuItem}
+                                activeClassName={classes.menuItemActive}
+                            >
+                                Приюты
+                            </NavLink>
+                            <NavLink
                                 to={ROUTES.ABOUT}
                                 className={classes.menuItem}
                                 activeClassName={classes.menuItemActive}

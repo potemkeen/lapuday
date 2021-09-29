@@ -29,7 +29,7 @@ const ShelterCard: React.FC<{ shelter: Shelter }> = ({ shelter }) => {
     const classes = useStyles()
 
     return (
-        <Card sx={{ maxWidth: 400 }}>
+        <Card sx={{ maxWidth: 400, height: 460 }}>
             <CardHeader
                 avatar={(
                     <Avatar
@@ -46,50 +46,56 @@ const ShelterCard: React.FC<{ shelter: Shelter }> = ({ shelter }) => {
                 lng={shelter.location.longitude}
             />
             <CardContent>
-                <Box className={classes.infoRow}>
-                    <LocationOnIcon color="secondary" />
-                    <Box ml={1}>
-                        <Typography
-                            variant="body2"
-                            color="text.secondary"
-                            component={Link}
-                            href={`https://yandex.ru/maps/?pt=${shelter.location.longitude},${shelter.location.latitude}&z=12&l=map`}
-                            underline="hover"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            {shelter.address}
-                        </Typography>
+                {shelter.address && (
+                    <Box className={classes.infoRow}>
+                        <LocationOnIcon color="secondary" />
+                        <Box ml={1}>
+                            <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                component={Link}
+                                href={`https://yandex.ru/maps/?pt=${shelter.location.longitude},${shelter.location.latitude}&z=12&l=map`}
+                                underline="hover"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                {shelter.address}
+                            </Typography>
+                        </Box>
                     </Box>
-                </Box>
-                <Box className={classes.infoRow}>
-                    <EmailIcon color="secondary" />
-                    <Box ml={1}>
-                        <Typography
-                            variant="body2"
-                            color="text.secondary"
-                            component={Link}
-                            href={`mailto:${shelter.email}`}
-                            underline="hover"
-                        >
-                            {shelter.email}
-                        </Typography>
+                )}
+                {shelter.email && (
+                    <Box className={classes.infoRow}>
+                        <EmailIcon color="secondary" />
+                        <Box ml={1}>
+                            <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                component={Link}
+                                href={`mailto:${shelter.email}`}
+                                underline="hover"
+                            >
+                                {shelter.email}
+                            </Typography>
+                        </Box>
                     </Box>
-                </Box>
-                <Box className={classes.infoRow}>
-                    <PhoneIcon color="secondary" />
-                    <Box ml={1}>
-                        <Typography
-                            variant="body2"
-                            color="text.secondary"
-                            component={Link}
-                            href={`tel:${shelter.phone}`}
-                            underline="hover"
-                        >
-                            {shelter.phone}
-                        </Typography>
+                )}
+                {shelter.phone && (
+                    <Box className={classes.infoRow}>
+                        <PhoneIcon color="secondary" />
+                        <Box ml={1}>
+                            <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                component={Link}
+                                href={`tel:${shelter.phone}`}
+                                underline="hover"
+                            >
+                                {shelter.phone}
+                            </Typography>
+                        </Box>
                     </Box>
-                </Box>
+                )}
             </CardContent>
         </Card>
     )
